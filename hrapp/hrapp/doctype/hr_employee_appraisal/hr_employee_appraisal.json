@@ -1,0 +1,462 @@
+{
+ "actions": [],
+ "allow_copy": 1,
+ "allow_import": 1,
+ "autoname": "HEA-.YY.-.######",
+ "creation": "2021-03-02 10:28:10.241742",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "employee",
+  "emp_user",
+  "employee_name",
+  "manager",
+  "man_user",
+  "appraisal_status",
+  "column_break_3",
+  "posting_date",
+  "phase",
+  "end_date",
+  "template",
+  "amended_from",
+  "job_description_section",
+  "jobs",
+  "job_description_totals_section",
+  "employee_job_total",
+  "employee_job_average",
+  "column_break_14",
+  "manager_job_total",
+  "manager_job_average",
+  "column_break_17",
+  "panelist_job_total",
+  "panelist_job_average",
+  "job_description_comments_section",
+  "jobs_employee_comments",
+  "jobs_manager_comment",
+  "general_performance_requirements_section",
+  "performances",
+  "general_performance_requirements_totals_section",
+  "employee_performance_total",
+  "employee_performance_average",
+  "column_break_28",
+  "manager_performance_total",
+  "manager_performance_average",
+  "column_break_31",
+  "panelist_performance_total",
+  "panelist_performance_average",
+  "section_break_13",
+  "employee_comment",
+  "manager_comment",
+  "overall_rating_section",
+  "employee_total",
+  "employee_average",
+  "column_break_40",
+  "manager_total",
+  "manager_average",
+  "column_break_43",
+  "panelist_total",
+  "panelist_average",
+  "recommendation_section",
+  "recommendation"
+ ],
+ "fields": [
+  {
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Employee",
+   "options": "Employee",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Posting Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "phase",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Appraisal Phase",
+   "options": "HR Appraisal Phase",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fetch_from": "phase.template",
+   "fieldname": "template",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Template",
+   "options": "HR Appraisal Template",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "HR Employee Appraisal",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "job_description_section",
+   "fieldtype": "Section Break",
+   "label": "JOB DESCRIPTION"
+  },
+  {
+   "fieldname": "jobs",
+   "fieldtype": "Table",
+   "label": "Appraisal Job Details",
+   "options": "HR Employee Appraisal Job Details"
+  },
+  {
+   "fieldname": "general_performance_requirements_section",
+   "fieldtype": "Section Break",
+   "label": "GENERAL PERFORMANCE REQUIREMENTS"
+  },
+  {
+   "fieldname": "performances",
+   "fieldtype": "Table",
+   "label": "Appraisal Performance Details",
+   "options": "HR Employee Appraisal Performance Details"
+  },
+  {
+   "fetch_from": "employee.reports_to",
+   "fieldname": "manager",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Manager",
+   "options": "Employee",
+   "read_only": 1
+  },
+  {
+   "fieldname": "jobs_employee_comments",
+   "fieldtype": "Small Text",
+   "label": "Employee Comments",
+   "read_only": 1
+  },
+  {
+   "fieldname": "jobs_manager_comment",
+   "fieldtype": "Small Text",
+   "label": "Manager Comment",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_13",
+   "fieldtype": "Section Break",
+   "label": "Overall Comments"
+  },
+  {
+   "fieldname": "employee_comment",
+   "fieldtype": "Small Text",
+   "label": "Employee Comment",
+   "read_only": 1
+  },
+  {
+   "fieldname": "manager_comment",
+   "fieldtype": "Small Text",
+   "label": "Manager Comment",
+   "read_only": 1
+  },
+  {
+   "fieldname": "overall_rating_section",
+   "fieldtype": "Section Break",
+   "label": "Overall Rating"
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "employee.employee_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Read Only",
+   "label": "Employee Name"
+  },
+  {
+   "fieldname": "job_description_totals_section",
+   "fieldtype": "Section Break",
+   "label": "JOB DESCRIPTION Totals"
+  },
+  {
+   "fieldname": "employee_job_total",
+   "fieldtype": "Float",
+   "label": "Employee Job Total",
+   "read_only": 1
+  },
+  {
+   "fieldname": "employee_job_average",
+   "fieldtype": "Float",
+   "label": "Employee Job Average",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_14",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "manager_job_total",
+   "fieldtype": "Float",
+   "label": "Manager Job Total",
+   "read_only": 1
+  },
+  {
+   "fieldname": "manager_job_average",
+   "fieldtype": "Float",
+   "label": "Manager Job Average",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_17",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "panelist_job_total",
+   "fieldtype": "Float",
+   "label": "Panelist Job Total",
+   "read_only": 1
+  },
+  {
+   "fieldname": "panelist_job_average",
+   "fieldtype": "Float",
+   "label": "Panelist Job Average",
+   "read_only": 1
+  },
+  {
+   "fieldname": "job_description_comments_section",
+   "fieldtype": "Section Break",
+   "label": "JOB DESCRIPTION Comments"
+  },
+  {
+   "fieldname": "general_performance_requirements_totals_section",
+   "fieldtype": "Section Break",
+   "label": "GENERAL PERFORMANCE REQUIREMENTS Totals"
+  },
+  {
+   "fieldname": "employee_performance_total",
+   "fieldtype": "Float",
+   "label": "Employee Performance Total",
+   "read_only": 1
+  },
+  {
+   "fieldname": "employee_performance_average",
+   "fieldtype": "Float",
+   "label": "Employee Performance Average",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_28",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "manager_performance_total",
+   "fieldtype": "Float",
+   "label": "Manager Performance Total",
+   "read_only": 1
+  },
+  {
+   "fieldname": "manager_performance_average",
+   "fieldtype": "Float",
+   "label": "Manager Performance Average",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_31",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "panelist_performance_total",
+   "fieldtype": "Float",
+   "label": "Panelist Performance Total",
+   "read_only": 1
+  },
+  {
+   "fieldname": "panelist_performance_average",
+   "fieldtype": "Float",
+   "label": "Panelist Performance Average",
+   "read_only": 1
+  },
+  {
+   "fieldname": "employee_total",
+   "fieldtype": "Float",
+   "label": "Employee Total",
+   "read_only": 1
+  },
+  {
+   "fieldname": "employee_average",
+   "fieldtype": "Float",
+   "label": "Employee Average",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_40",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "manager_total",
+   "fieldtype": "Float",
+   "label": "Manager Total",
+   "read_only": 1
+  },
+  {
+   "fieldname": "manager_average",
+   "fieldtype": "Float",
+   "label": "Manager Average",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_43",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "panelist_total",
+   "fieldtype": "Float",
+   "label": "Panelist Total",
+   "read_only": 1
+  },
+  {
+   "fieldname": "panelist_average",
+   "fieldtype": "Float",
+   "label": "Panelist Average",
+   "read_only": 1
+  },
+  {
+   "fieldname": "recommendation_section",
+   "fieldtype": "Section Break",
+   "label": "Recommendation"
+  },
+  {
+   "fieldname": "recommendation",
+   "fieldtype": "Small Text",
+   "label": "Recommendation",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "phase.end_date",
+   "fieldname": "end_date",
+   "fieldtype": "Date",
+   "label": "End Date",
+   "read_only": 1
+  },
+  {
+   "default": "Pending",
+   "fieldname": "appraisal_status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Appraisal Status",
+   "options": "Pending\nAwaiting Manager's Review\nAwaiting Panel Review\nCompleted",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.user_id",
+   "fieldname": "emp_user",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "emp_user",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "manager.user_id",
+   "fieldname": "man_user",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "man_user",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2021-03-17 10:17:23.950300",
+ "modified_by": "Administrator",
+ "module": "HRapp",
+ "name": "HR Employee Appraisal",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "import": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "set_user_permissions": 1,
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "import": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HR Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HR User",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "read": 1,
+   "role": "Employee",
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Panelist",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "show_preview_popup": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "title_field": "employee_name",
+ "track_changes": 1
+}
