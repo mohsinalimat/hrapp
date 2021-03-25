@@ -387,12 +387,13 @@ def update_password(new_password):
 
         frappe.db.set_value("User", user, "last_password_reset_date", today())
         frappe.db.set_value("User", user, "reset_password_key", "")
+        return generate_response("S", "200", message="Success")
     except Exception as e:
         return generate_response("F", error=e)
 
 
 def send_welcome_mail(doc, method):
-    if doc.is_new and doc.send_cust_welcome_email:
+    if doc.is_new and doc.send_emp_welcome_email:
         send_welcome_mail_to_user(doc)
 
 
